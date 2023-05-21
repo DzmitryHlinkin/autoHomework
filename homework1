@@ -48,5 +48,5 @@ console.log(x3);
 //task3
 const n = promt("введите целое положительное число от 1 до 9")
 let sum = 0
-if (n >= 1 && n <= 9) {sum = Number(n) + Number(n+n) + Number(n+n+n);
+if (n >= 1 && n <= 9) {sum = Number("n") + Number("n"+"n") + Number("n"+"n"+"n");
 console.log(sum)}
