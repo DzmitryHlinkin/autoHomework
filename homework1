@@ -46,9 +46,16 @@ console.log(x2);
 console.log(x3);
 
 //task3
-const n = promt("введите целое положительное число от 1 до 9")
-let sum = 0
-if (n >= 1 && n <= 9) {sum = Number("n") + Number("n"+"n") + Number("n"+"n"+"n");
-console.log(sum)}
+const n = 5;
+let sum = 0;
+let a = n;
+let b = n + String (n) ;
+let c = n + String (n) +String (n)
+sum = Number (a) + Number (b) + Number (c) ;
+console.log(a)
+console.log(b)
+console.log(c)
+console.log(sum)
 
 //тест
+let a = 1

@@ -135,7 +135,7 @@ console.log(fullName)
 
 const question = "1" + 1
 const question2 = 1 + 1 + "1"
-console.log(question2)
+console.log(question)
 
 const quiz = 'b' + 'a' + +'a' + 'a'
 console.log(quiz)
