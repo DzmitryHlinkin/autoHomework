@@ -85,7 +85,7 @@ console.log(age);
 console.log(isNotAnumber)
 if (typeof  (age === "number") && isNotAnumber == false) {
   if (age < age_2) {
-   console.log(
+   alert(
       "You don’t have access cause your age is " +
         age +
         ". It’s less then " +
@@ -93,12 +93,12 @@ if (typeof  (age === "number") && isNotAnumber == false) {
         "."
     );
   } else if (age >= age_2 && age < age_3) {
-    console.log("Welcome!");
+    alert("Welcome!");
   } else if (age > age_3) {
-    console.log("Keep calm and look Culture channel");
+    alert("Keep calm and look Culture channel");
   } else {
-    console.log("Technical work");
+    alert("Technical work");
   }
 } else {
-  console.log("ty che bukvy suda pishesh?");
+  alert("ty che bukvy suda pishesh?");
 }
