@@ -52,8 +52,10 @@
 //const age_2 = 18;
 //const age_3 = 60;
 //age = +age;
+//const isNotAnumber = isNaN(age)
 //console.log(age);
-//if (typeof age !== NaN && age === "number") {
+//console.log(isNotAnumber)
+//if (isNotAnumber == false) {
 // if (age < age_2) {
 //   console.log(
    // "You don’t have access cause your age is " +
@@ -79,11 +81,18 @@
 let age = prompt("How old are you?(only num)");
 const age_2 = 18;
 const age_3 = 60;
+
+if (age === null || age === undefined || age === "") {
+  alert("no data")
+}
+else {
+console.log(age);  
 age = +age;
 const isNotAnumber = isNaN(age)
-console.log(age);
+
 console.log(isNotAnumber)
-if (typeof  (age === "number") && isNotAnumber == false) {
+
+if (isNotAnumber == false) {
   if (age < age_2) {
    alert(
       "You don’t have access cause your age is " +
@@ -101,4 +110,5 @@ if (typeof  (age === "number") && isNotAnumber == false) {
   }
 } else {
   alert("ty che bukvy suda pishesh?");
+}
 }
