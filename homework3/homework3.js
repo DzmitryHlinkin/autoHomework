@@ -53,16 +53,37 @@ while(i<6) {
 
 //Сделать из "*" равнобедренный треугольник
 const smile = ':)'
-let m = '----------'
+let m = '     '
 let smile2 = ':)'
+let n = ''
 let i = 0
-while(i<6) {
-  console.log( `${m}  ${smile2}`)
-  m = m.replace('--'," ")
+console.log( `${m}  ${smile2}`)
+while(i<5) {
+  //console.log( `${m}  ${smile2}`)
+  m = m.replace(' ', '')
   i = i+1
-  smile2 =`${smile2} ${smile}`
+  smile2 =`${smile2}${smile}`
+  console.log( `${m}  ${smile2}`)
 }
-
+//ромб
+const smile = ':)'
+let m = '        '
+let smile2 = ':)'
+let n = '   '
+let i = 0
+console.log(`${m}${smile2}`)
+while(i<5) {
+  //console.log( `${m}  ${smile2}`)
+  m = m.replace(' ','')
+  i = i+1
+  smile2 =`${smile2}${smile}`
+  console.log(`${m}${smile2}`)
+}
+while (i>= 0) {
+  smile2 = smile2.replace(':)',' ')
+  i=i-1
+  console.log(`${n}${smile2}`)
+}
 
 //3. Вам нужно вывести в консоль числа от 1 до 100.
 //Если число делится без остатка на 3, то выведете в консоль “число - делится на 3”.
@@ -88,3 +109,56 @@ for(let i = 0; i < 100; i++) {
   else
   console.log(a)
 }
+
+//4. Написать скрипт, который преобразует любое предложение в camelCase. 
+//Первое слово должно начинаться с буквы в нижнем регистре, 
+ // у остальных -  верхнем. Пример: I am super engineer => iAmSuperEngineer
+{
+ let text = 'dsdsdsdT httt ytt uttt'
+ let index = text.indexOf(' ')
+ let word = ''
+ let result = ''
+ //let index1 = index
+ //console.log(index)
+ while(index>=0) {
+ word = text.slice(0, index)
+ text = text.slice(index +1)
+ index = text.indexOf(' ')
+ //result += result 
+ if (result) {result += word[0].toUpperCase() + word.slice(1).toLowerCase()}
+ else {result += word[0].toLowerCase() + word.slice(1).toLowerCase() 
+ }
+ word = ''
+ if(index === -1) {result += text[0].toUpperCase() + text.slice(1).toLowerCase()}
+ 
+ 
+ }
+console.log(result)
+}
+
+ {let str = 'AAa bB вывывывb ccC ddD'
+ let result = ''
+ let word = ''
+for(let i=0; i<str.length + 1; i++) {
+ 
+ 
+ if(str[i] !== ' ' && str[i]) {
+    
+   word += str[i]
+ } else {
+   
+  result += result
+   ? word[0].toUpperCase() + word.slice(1).toLowerCase()
+   : word[0].toLowerCase() + word.slice(1).toLowerCase()
+   word = ''
+  }
+ }
+ console.log(result)
+}
+
+let str = 'abc'
+console.log(str[0].toUpperCase())
+console.log(str[1])
+console.log(str[2])
+console.log(str[3])
+
