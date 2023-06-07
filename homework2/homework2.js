@@ -48,32 +48,32 @@
 //Task 3*. Преобразовать Task 2 таким образом, чтобы значение НАПРИМЕР '2'
 //(т.е. ЛЮБАЯ строка в которой лежит ТОЛЬКО ЦИФРА) пропускалось, преобразовываясь в number
 
-//let age = 4;
-//const age_2 = 18;
-//const age_3 = 60;
-//age = +age;
-//const isNotAnumber = isNaN(age)
+let age = 4;
+const age_2 = 18;
+const age_3 = 60;
+age = +age;
+const isNotAnumber = isNaN(age)
 //console.log(age);
 //console.log(isNotAnumber)
-//if (isNotAnumber == false) {
-// if (age < age_2) {
-//   console.log(
-   // "You don’t have access cause your age is " +
- //       age +
-///      ". It’s less then " +
- //      age_2 +
- //      "."
- // );
- //} else if (age >= age_2 && age < age_3) {
-//    console.log("Welcome!");
-//} else if (age > age_3) {
-//   console.log("Keep calm and look Culture channel");
- //} else {
- // console.log("Technical work");
-// }
-//} else {
-//console.log("ty che bukvy suda pishesh?");
-//}
+if (isNotAnumber == false) {
+ if (age < age_2) {
+   console.log(
+    "You don’t have access cause your age is " +
+       age +
+      ". It’s less then " +
+      age_2 +
+       "."
+  );
+ } else if (age >= age_2 && age < age_3) {
+    console.log("Welcome!");
+} else if (age > age_3) {
+   console.log("Keep calm and look Culture channel");
+ } else {
+  console.log("Technical work");
+ }
+} else {
+console.log("ty che bukvy suda pishesh?");
+}
 
 //Task 4*. Преобразовать Task 3* таким образом, чтобы age принимался через prompt
 //в привязанной вёрстке, а результат выводился в alert

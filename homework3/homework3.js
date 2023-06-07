@@ -135,7 +135,7 @@ for(let i = 0; i < 100; i++) {
  }
 console.log(result)
 }
-
+//4. другой вариант
  {let str = 'AAa bB вывывывb ccC ddD'
  let result = ''
  let word = ''
@@ -161,4 +161,36 @@ console.log(str[0].toUpperCase())
 console.log(str[1])
 console.log(str[2])
 console.log(str[3])
+
+/*5*. Создать программу, которая будет принимать на вход СЛОВО (одно), 
+и возвращать количество гласных и согласных букв в этом слове. Ответ должен
+выводиться шаблонным литералом вида word contains x vowels and y consonants
+  */
+
+  let slowo = 'слоывыdfdfdвааа'
+  const glas = ['а', 'е', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я']
+  const sogl = ['б', 'в', 'г', 'д', 'ж', 'з', 'й', 'к', 'л', 'м', 'н', 'п', 'р', 'с', 'т', 'ф', 'х', 'ц', 'ч', 'ш', 'щ']
+  const engglas = ['a', 'e', 'i', 'o', 'u']
+  const engsogl = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
+  const word = slowo.toLowerCase();
+  let glasvowels = ''
+  let sogvowels = ''
+  for(let i = 0; i < word.length; i++) {
+    //console.log(word[i])
+    //console.log(i)
+    if (glas.includes(word[i])) 
+    {glasvowels++}
+    else if (engglas.includes(word[i])) 
+    {glasvowels++}
+    else if (sogl.includes(word[i])) 
+    {sogvowels++}
+    else if (engsogl.includes(word[i])) 
+    {sogvowels++}
+    else {console.log('bred')}
+  
+    //console.log(`${slowo} contains ${glasvowels} vowels and ${sogvowels}`)
+  }
+  console.log(`${slowo} содержит ${glasvowels} гласные и ${sogvowels} согласные`)
+
+
 
