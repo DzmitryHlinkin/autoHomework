@@ -194,3 +194,35 @@ console.log(str[3])
 
 
 
+  /*6**. Написать программу, которая видоизменяет принимаемое слово шифром ЦЕЗАРЯ (посмотреть в википедии) со сдвигом на 1 в любую из сторон.
+  Например let str = 'AbC'; let offset = -1, result = 'ZaB
+  */
+let str = 'aBczZ'
+//const alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+//const upAlpha = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+const alpha = 'abcdefghijklmnopqrstuvwxyz'
+const upAlpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+let str1 = ''
+const offset = 1
+for(let i = 0; i < str.length; i++) {
+if(alpha.includes(str[i]) && str[i] != 'z') 
+{ind = alpha.indexOf(str[i])
+  str1 = str1 + alpha.at(ind + 1) }
+
+else if(upAlpha.includes(str[i]) && str[i] !='Z') 
+{ ind = upAlpha.indexOf(str[i])
+  str1 = str1 + upAlpha.at(ind + 1)
+}
+else if (str[i] === 'z')
+{str1 = str1 + 'a'
+
+}
+else if (str[i] === 'Z')
+{str1 = str1 + 'A'
+}
+
+else 
+{console.log('kueta')}
+}
+
+console.log(str1)
