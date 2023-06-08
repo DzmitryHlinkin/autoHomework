@@ -197,7 +197,7 @@ console.log(str[3])
   /*6**. Написать программу, которая видоизменяет принимаемое слово шифром ЦЕЗАРЯ (посмотреть в википедии) со сдвигом на 1 в любую из сторон.
   Например let str = 'AbC'; let offset = -1, result = 'ZaB
   */
-let str = 'aBczZ'
+let str = 'AaA ZzA'
 //const alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 //const upAlpha = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 const alpha = 'abcdefghijklmnopqrstuvwxyz'
@@ -205,13 +205,14 @@ const upAlpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 let str1 = ''
 const offset = 1
 for(let i = 0; i < str.length; i++) {
+  if(offset === 1 ){
 if(alpha.includes(str[i]) && str[i] != 'z') 
 {ind = alpha.indexOf(str[i])
-  str1 = str1 + alpha.at(ind + 1) }
+  str1 = str1 + alpha.at(ind + offset) }
 
 else if(upAlpha.includes(str[i]) && str[i] !='Z') 
 { ind = upAlpha.indexOf(str[i])
-  str1 = str1 + upAlpha.at(ind + 1)
+  str1 = str1 + upAlpha.at(ind + offset)
 }
 else if (str[i] === 'z')
 {str1 = str1 + 'a'
@@ -222,7 +223,31 @@ else if (str[i] === 'Z')
 }
 
 else 
-{console.log('kueta')}
+{str1 = str1 + ' '}
 }
+else if (offset === -1) {
+  if(alpha.includes(str[i]) && str[i] != 'a') 
+  {ind = alpha.indexOf(str[i])
+    str1 = str1 + alpha.at(ind + offset) }
+  
+  else if(upAlpha.includes(str[i]) && str[i] !='A') 
+  { ind = upAlpha.indexOf(str[i])
+    str1 = str1 + upAlpha.at(ind + offset)
+  }
+  else if (str[i] === 'a')
+  {str1 = str1 + 'z'
+  
+  }
+  else if (str[i] === 'A')
+  {str1 = str1 + 'Z'
+  }
+  
+  else 
+  {str1 = str1 + ' '}
+  } 
+  else {console.log('offset tolko 1 ili -1')}
+}
+
+
 
 console.log(str1)
