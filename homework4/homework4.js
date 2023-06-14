@@ -60,8 +60,9 @@ else if (longest[i] > longest[0])
 убирает из него дубликаты и возвращает массив с только уникальными значениями.
 */
 const inputNumber = [1, 2, 3, 4, 1, 3, 5, 6, 3, 7]
-const resultNum = []
+
 function unicNumbers() {
+  const resultNum = []
 for (const number1 of inputNumber ) {
   if (!resultNum.includes(number1)) {
     resultNum.push(number1)}
@@ -76,3 +77,23 @@ unicNumbers(inputNumber)
 
 /*4. Написать функцию, которая принимает на вход слово и проверяет, 
 является ли это слово палиндромом*/
+const slowo = 'kazak'
+function palidrom() {
+const restruct = slowo.split('')
+const leght = slowo.length
+//console.log(restruct)
+//console.log(leght)
+let result1 = []
+for(let i = leght-1; i >= 0; --i) 
+{
+  result1.push(restruct[i])
+}
+//console.log(result1.join())
+if (restruct.join() === result1.join()) {
+  console.log('true')}
+else 
+  {console.log('falce')}
+}
+
+
+palidrom(slowo); 
