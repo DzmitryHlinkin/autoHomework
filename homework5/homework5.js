@@ -14,6 +14,7 @@ const sentence = "I am the best AQA ever!";
     for (const letter of arrOfLeters) {
       if (alpha.includes(letter)) {
         ind = arrOfLeters.filter((num) => num === letter).length;
+        console.log(ind)
         arrOflengs.push(ind);
       } else {
         arrOflengs.push(letter);
@@ -115,3 +116,47 @@ function sortByVowels(Values) {
   return Values.sort((a, b) => countVowels(a) - countVowels(b));
 }
 console.log(sortByVowels(Values))
+
+
+
+/*4. У вас есть массив со скобками, предположим [ ‘(‘, ‘)’, ‘(‘, ‘)’, ‘)’], 
+количество элементов и последовательность может быть разной.
+Нужно выяснить, у каждой ли скобки есть соответствующая пара 
+(открывающая и закрывающая).
+Усложнение: в массиве могут быть вложены еще массивы на разной глубине. 
+(ПОПРОБУЙТЕ МЕТОД .flat(), изучите как он работает с разными глубинами 
+вложенности)
+Вернуть нужно всё также есть ли у каждой скобочки соответствующая пара. 
+Пример:
+const arr = [[['(']], ')', '(', ')', ')', ['(', ['('], [')']]]
+*/
+const arr = [[[]], '(', ')',[ ['('], '[','(', ')', ']', [')']]]
+function hasBrackets(arr) {
+  const stack = [];
+  const flatArr = arr.flat(Infinity);
+  console.log(flatArr)
+  for (let i = 0; i < flatArr.length; i++) {
+    if (flatArr[i] === '(' || flatArr[i] === '{' || flatArr[i] === '[') {
+      stack.push(flatArr[i]);
+    } else if (flatArr[i] === ')' && stack.indexOf('(') != -1 ) {
+      ind = arr.indexOf('(')
+      stack.pop(ind);
+    } else if (flatArr[i] === '}' && stack.indexOf('{') != -1 ) {
+      ind = arr.indexOf('}')
+      stack.pop(ind);
+    } else if (flatArr[i] === ']' && stack.indexOf('[') != -1 ) {
+      ind = arr.indexOf(']')
+      stack.pop(ind);
+    } else {
+      console.log(stack)
+      return false;
+    }
+  }
+  
+  return stack.length === 0;
+}
+
+console.log(hasBrackets(arr))
+
+
+
