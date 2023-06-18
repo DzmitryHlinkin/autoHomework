@@ -130,12 +130,23 @@ console.log(sortByVowels(Values))
 Пример:
 const arr = [[['(']], ')', '(', ')', ')', ['(', ['('], [')']]]
 */
-const arr = [[[]], '(', ')',[ ['('], '[','(', ')', ']', [')']]]
+const arr = [[['(']], ')', '(', ')', ['(', [')']]]
 function hasBrackets(arr) {
-  const stack = [];
+  //const stack = [];
   const flatArr = arr.flat(Infinity);
   console.log(flatArr)
-  for (let i = 0; i < flatArr.length; i++) {
+  return flatArr.reduce((count, currentValue) => {
+    if (currentValue === '(' ) {
+      count++
+      console.log(count)
+    }
+    else count--
+    return count
+ 
+  }, 0) === 0
+}
+console.log(hasBrackets(arr))
+  /*for (let i = 0; i < flatArr.length; i++) {
     if (flatArr[i] === '(' || flatArr[i] === '{' || flatArr[i] === '[') {
       stack.push(flatArr[i]);
     } else if (flatArr[i] === ')' && stack.indexOf('(') != -1 ) {
@@ -154,9 +165,7 @@ function hasBrackets(arr) {
   }
   
   return stack.length === 0;
-}
-
-console.log(hasBrackets(arr))
+}*/
 
 
 
