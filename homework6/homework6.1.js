@@ -71,3 +71,31 @@ const enterprises = [
 - Отдел аналитики (нет сотрудников)
 */
 
+
+
+
+
+/*
+   enterprises.forEach(enterprise => {
+    let totalEmployees = 0;
+    enterprise.departments.forEach(department => {
+      totalEmployees += department.employees_count;
+    });
+    console.log(`${enterprise.name} ${totalEmployees ? totalEmployees : 'нет'} сотрудников`)
+    enterprise.departments.forEach(department => {
+        console.log(`- ${department.name} ${department.employees_count ? department.employees_count : 'нет'} сотрудников`)
+        ;})
+  });
+*/
+
+  /*
+  2. Написать функцию, которая будет принимать 1 аргумент 
+  (id отдела или название отдела и возвращать название предприятия, к которому относится).
+  */
+function getName(idOrName) { enterprises.forEach(enterprise => {
+    enterprise.departments.find(departments => departments.id === idOrName || 
+        departments.name === idOrName) ? console.log(enterprise.name) : console
+   //console.log(enterprise)
+  });
+}
+getName('Отдел маркетинга')
