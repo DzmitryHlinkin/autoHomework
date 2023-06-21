@@ -57,13 +57,28 @@ characters.forEach(function(character) {
   });
 */
 
+/*5. Создайте объект qa с полями name, age, salary и методом getInfo,
+ который будет возвращать строку вида: 
+   `Hello, my name is ${name}, i'm ${age} and my salary is ${salary}`. 
+   Значения в строке должны ссылаться на контекст ЭТОГО ОБЪЕКТА, без подмен.
+   */
 
 
 
+function getInfo() {
+   return `Hello, my name is ${this.name}, i'm ${this.age} and my salary is ${this.salary}`
+}
+
+const qa = [
+  { name: 'Barney', age: 36, salary: 1000, getInfo},
+  { name: 'Fred', age: 40, salary: 2000, getInfo},
+  { name: 'Jack', age: 50, salary: 100, getInfo}
+];
 
 
-
-
+const greeting = qa.forEach(function(info) {
+ console.log(info.getInfo())
+})
 
 
 
