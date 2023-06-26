@@ -11,14 +11,14 @@
     */
 
 function randomGenerator(n) {
-    var usedNumbers = []; 
+    const usedNumbers = []; 
     
     function generateRandom() {
       if (usedNumbers.length === n) { 
         return 'All numbers were received';
       }
       
-      var randomNum = Math.ceil(Math.random() * n); 
+      let randomNum = Math.ceil(Math.random() * n); 
       
       while (usedNumbers.includes(randomNum)) { 
         randomNum = Math.ceil(Math.random() * n);
@@ -33,7 +33,7 @@ function randomGenerator(n) {
   }
   
   
-  var randomFunc = randomGenerator(5);
+  let randomFunc = randomGenerator(5);
   
   console.log(randomFunc()); 
   console.log(randomFunc()); 
