@@ -21,7 +21,7 @@
 
 class User  {
 name = 'Toliyan';
-_surname = 'Kotejnok';
+#surname = 'Kotejnok';
 
 sayHi() {return `Hello from ${this.name}`}
 }
@@ -39,7 +39,7 @@ console.log(user1.sayHi())
  class User  {
     constructor(name, surname) {
      this.name = name;
-     this.surname = surname;
+     this.#surname = surname;
     }
     sayHi() {return `Hello from ${this.name}`}
     stop() {
@@ -47,7 +47,7 @@ console.log(user1.sayHi())
     }
     }
     const user2 = new User('Tolia', 'Kotejnok')
-    console.log(user2.stop())
+    console.log(user2.surname)
 
 
 
