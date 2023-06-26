@@ -231,7 +231,7 @@ deleteEnterprise(1)
 
 function getEnterpriseIndex(enterpriseID) {
 
- index = enterprises.findIndex((ent) => ent.id === enterpriseID);
+index = enterprises.findIndex((ent) => ent.id === enterpriseID);
 console.log(index)
 }
 
