@@ -177,11 +177,12 @@ function cakes(recipe, available) {
           this.name = name;
           this.sprintDuration = sprintDuration;
           this.dailyStandupTime = dailyStandupTime;
+          this.specialization = specialization
           this.teammates = [];
           this.tasks = [];
         }
       
-        
+      
         get teamName() {
           return this.name;
         }
@@ -190,10 +191,10 @@ function cakes(recipe, available) {
         }
       
        
-        get sprintDuration1() {
+        get sprintDuration_() {
           return this.sprintDuration;
         }
-        set sprintDuration1(duration) {
+        set sprintDuration_(duration) {
           this.sprintDuration = duration;
         }
       
@@ -205,10 +206,10 @@ function cakes(recipe, available) {
         }
       
         
-        get dailyStandupTime1() {
+        get dailyStandupTime_() {
           return this.dailyStandupTime;
         }
-        set dailyStandupTime1(time) {
+        set dailyStandupTime_(time) {
           this.dailyStandupTime = time;
         }
       
@@ -257,7 +258,7 @@ function cakes(recipe, available) {
         showAllTeammates() {
           console.log("Teammates:");
           for (let teammate of this.teammates) {
-            console.log(teammate);
+            return teammate;
           }
         }
       
@@ -266,7 +267,7 @@ function cakes(recipe, available) {
           console.log(`Teammates with specialization "${specialization}":`);
           for (let teammate of this.teammates) {
             if (teammate.specialization === specialization) {
-              console.log(teammate);
+              return teammate;
             }
           }
         }
@@ -275,7 +276,7 @@ function cakes(recipe, available) {
         showAllTasks() {
           console.log("Tasks:");
           for (let task of this.tasks) {
-            console.log(task);
+            return task;
           }
         }
       }
@@ -357,12 +358,17 @@ function cakes(recipe, available) {
         
 let  jsonString = JSON.stringify(team, null, 4);
 let  jsonTextElement = document.getElementById("jsonText");  
-   
+
 let myDiv = document.getElementById("myDiv");
 
-// Изменение содержимого div
-myDiv.innerText = jsonString;
+myDiv.innerText += `Team: ${team.name}
+Sprint Duration: ${team.sprintDuration}
+Daily Standup Time: ${team.dailyStandupTime}
+Temmates: ${team.teammates}
+Tasks: ${team.tasks}
 
-// Можно также изменять стили div, например:
+`
+
+
 myDiv.style.color = "red";
 myDiv.style.fontSize = "20px";
