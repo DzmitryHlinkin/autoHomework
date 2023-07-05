@@ -49,7 +49,7 @@ sumNumbers(4, "тыц")
 Если число больше 5 - промис резолвается, если меньше либо равно - реджектается.
 */
 
-
+/*
 function retryPromise(func, maxAttempts) {
     return new Promise((resolve, reject) => {
       const retry = (attempts) => {
@@ -91,3 +91,58 @@ function retryPromise(func, maxAttempts) {
     .catch((error) => {
       console.log(error); 
     });  
+*/
+
+
+
+/*
+Создайте конвертер валют, используя Exchange Rates API. (зарегистрироваться и получить токен) 
+Данные с сайта брать запросом используя fetch(). 
+Пользователь должен иметь возможность передавать валюту и сумму денег в 
+функцию и получать сумму денег в желаемой валюте на выходе. 
+Например: currencyConvertor(USD, 40, EUR) ⇒ 35 EUR
+Решить с помощью в 2 вариантах: с  .then() и с использованием async/await
+  */
+
+/*
+function currencyConverter(fromCurrency, amount, toCurrency) {
+    //const apiKey = '49a588adc842cac657b8f00277fabd4e';
+    const url = `http://api.exchangeratesapi.io/v1/latest?access_key=49a588adc842cac657b8f00277fabd4e&format=1`;
+
+  
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        const exchangeRate = data.rates[toCurrency];
+        const convertedAmount = amount * exchangeRate;
+  
+        console.log(`${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`);
+      })
+      .catch((error) => {
+        console.log('Ошибка:', error);
+      });
+  }
+
+  currencyConverter('USD', 4, 'BYN')
+  */
+
+
+  async function currencyConverter(fromCurrency, amount, toCurrency) {
+    //const apiKey = '52c7216360954fed23adc9086b36118d';
+    const url = `http://api.exchangeratesapi.io/v1/latest?access_key=49a588adc842cac657b8f00277fabd4e&format=1`;
+  
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      const exchangeRate = data.rates[toCurrency];
+      const convertedAmount = amount * exchangeRate;
+  
+      console.log(`${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`);
+    } catch (error) {
+      console.log('Ошибка при получении данных:', error);
+    }
+  }
+
+  currencyConverter('EYR', 4, 'USD')
+
+
