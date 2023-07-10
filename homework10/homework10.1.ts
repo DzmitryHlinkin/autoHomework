@@ -8,7 +8,7 @@
 const objects: Record<string, Primitives>[] = [
   { a: 1, b: 'two', c: true },
   { y: 45, x: 'hello', t: 45, g: false },
-  { alpha: 'foo', beta: 'bar', gamma: 'baz' },
+  { alpha: 'foo', beta: 'bar', gamma: 'baz', ttt: 'vxcvx', dffdf: "fdfd" },
 ]
 type Primitives = string | number | boolean
 

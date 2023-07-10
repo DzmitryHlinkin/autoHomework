@@ -4,12 +4,11 @@
 которая принимает массив объектов и возвращает объект с максимальным количеством
 пар ключ\значение из этого массива. Ниже приведен пошаговый алгоритм, котором вам нужно следовать.
 */
-
 const objects = [
     { a: 1, b: 'two', c: true },
-    { x: 'hello', y: 42 },
-    { alpha: 'foo', beta: 'bar', gamma: 'baz', gggg: 'dddd' },
-]; 
+    { y: 45, x: 'hello', t: 45, g: false },
+    { alpha: 'foo', beta: 'bar', gamma: 'baz', ttt: 'vxcvx', dffdf: "fdfd" },
+];
 function findMaxKeysValue(arr) {
     if (arr.length === 0) {
         throw new Error('Массив пуст');
@@ -23,5 +22,4 @@ function findMaxKeysValue(arr) {
     }
     return resultObject;
 }
-
-console.log(findMaxKeysValue(objects))
+console.log(findMaxKeysValue(objects));
